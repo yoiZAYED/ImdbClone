@@ -1,0 +1,88 @@
+.slider {
+  /* Set the slider's position relative to its normal position in the document flow */
+  position: relative;
+  
+  /* Set the height of the slider to 35 rem units */
+  height: 35rem;
+  
+  /* Define styles for each slide within the slider */
+  .slide {
+    /* Set the width of each slide to 100% of its container */
+    width: 100%;
+    
+    /* Position each slide absolutely within its container */
+    position: absolute;
+    
+    /* Set the height of each slide to 35 rem units */
+    height: 35rem;
+    
+    /* Define styles for the background of each slide */
+    &-bg {
+      /* Set the height of the background to match the slide height */
+      height: 35rem;
+      
+      /* Position the background relative to its normal position in the document flow */
+      position: relative;
+      
+      /* Define styles for images within the slide background */
+      img {
+        /* Ensure the image covers the entire background area */
+        height: 100%;
+        width: 100%;
+        
+        /* Scale the image as large as possible while maintaining its aspect ratio and cropping any overflow */
+        object-fit: cover;
+      }
+      
+      /* Define styles for a pseudo-element after the background image */
+      &::after {
+        /* Position the pseudo-element absolutely within its container */
+        position: absolute;
+        top: 0;
+        left: 0;
+        
+        /* Set the size of the pseudo-element to cover the entire background */
+        width: 100%;
+        height: 100%;
+        
+        /* Add an empty content to the pseudo-element */
+        content: '';
+        display: block;
+        
+        /* Apply a linear gradient as the background image, creating a fade effect */
+        background-image: linear-gradient(
+          90deg,
+          rgba(0, 0, 0, 1) 0%,
+          rgba(0, 0, 0, 1) 11%,
+          rgba(255, 255, 255, 0) 100%
+        );
+      }
+    }
+    
+    /* Define styles for a pane overlaying each slide */
+    &-pane {
+      /* Position the pane absolutely within its container */
+      position: absolute;
+      top: 5rem; /* Position the pane 5 rem units from the top */
+      left: 5rem; /* Position the pane 5 rem units from the left */
+      color: white; /* Set the text color to white */
+  
+      /* Define styles for different elements within the pane, such as title, meta information, and description */
+      .title {
+        font-size: 2.5rem; /* Set the font size for the title */
+      }
+      .meta {
+        font-size: 1.2rem; /* Set the font size for meta information */
+      }
+      .description {
+        font-size: 1.2rem; /* Set the font size for the description */
+        width: 75%; /* Set the width of the description to 75% of its container */
+      }
+    }
+  }
+}
+
+.pi {
+  color: orange; /* Set the color of elements with the class 'pi' to orange */
+  margin-right: 10px; /* Add a right margin of 10 pixels to elements with the class 'pi' */
+}

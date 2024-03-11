@@ -1,0 +1,56 @@
+<div class="slider" *ngIf="slides">
+  <!-- Iterate over each movie -->
+  <ng-container *ngFor="let movie of slides; let movieIndex = index">
+    <!-- here also for movies.results is supposed to be present instead we use just movies as data is stored in that now -->
+    <div class="slide" *ngIf="movieIndex === slideIndex" @slideFade>
+      <!-- also the slideFade Function can only be applied on html tags and not angular tags -->
+      <!-- here we are going to apply the slideFade function so we can obtain the required animation -->
+      <div class="slide-bg">
+        <!-- Display the movie image -->
+        <!-- Here we are going to place the images the first part is the standard url then we have the size which is w1280  then the remaining path of th
+      the image -->
+        <img src="{{ imagesBaseUrl + 'w1280' + movie.backdrop_path }}" alt="" />
+      </div>
+      <div class="slide-pane">
+        <!-- Display the movie title -->
+        <h2 class="title">{{ movie.original_title }}</h2>
+        <!-- Display other movie information -->
+        <div class="meta mb-4">
+          <div class="rating mb-1">
+            <i class="pi pi-star-fill"></i>
+            <span>{{ movie.vote_average }}</span>
+            <span>/10</span>
+          </div>
+          <div class="votes mb-1">
+            <i class="pi pi-users"></i>
+            <span>{{ movie.vote_count }}</span>
+          </div>
+          <div class="release-date mb-3">
+            <i class="pi pi-calendar"></i>
+            <span>{{ movie.release_date | date: 'yyyy' }}</span>
+          </div>
+        </div>
+        <!-- Display movie overview -->
+        <div class="description mb-3">{{ movie.overview }}</div>
+      </div>
+    </div>
+  </ng-container>
+</div>
+
+<!-- in the below code is an example of how ngFor works where we are accessing each element one after another. -->
+<!-- <div *ngFor="let item of array1">
+  {{ item }}
+</div>
+<div *ngIf=""></div> -->
+<!-- <pre>
+  {{ movies$ |async| json }}
+   this is | pipe where we are converting the movies to string format. -->
+<!-- </pre> -->
+<!-- this pre tag is used for presenting the data in a much organized fashion that is in dictionary format -->
+<!-- Now I need to access each movie in the sliding window one by one, -->
+<!-- <div *ngIf="movies$ | async as movies">
+  <div class="movie" *ngFor="let movie of movies.results">
+    {{ movie.original_title }}
+  </div>
+  this is the command used to retrieve the data one after another -->
+<!-- </div> -->

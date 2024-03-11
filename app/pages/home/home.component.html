@@ -1,0 +1,37 @@
+<ng-container *ngIf="popularMovies$ | async as popularMovies">
+  <app-slider [slides]="popularMovies"></app-slider>
+  <!-- here async refers to piping or formatiing asynchronous data that is received  from api as popularMovies which has a particular data type -->
+</ng-container>
+<!-- here ng-containter is used to gropu elements and also use other ng directives like ngIf for different data that we are trying to access -->
+<ng-container *ngIf="upcomingMovies$ | async as upcomingMovies">
+  <app-banner
+    [title]="'Upcoming Movies'"
+    [shows]="upcomingMovies"
+    [showsType]="'movie'"
+  ></app-banner>
+  <!-- earlier we had upcomingMovies.results but now after piping we can remove the results as the upcoming movie will be having resuls
+directly  same as below-->
+</ng-container>
+<ng-container *ngIf="topRatedMovies$ | async as topRatedMovies">
+  <app-banner
+    [title]="'Top Rated Movies'"
+    [shows]="topRatedMovies"
+    [showsType]="'movie'"
+  ></app-banner>
+</ng-container>
+
+<ng-container *ngIf="popularTvshows$ | async as popularTvshows">
+  <app-banner
+    [title]="'Popular TV Shows'"
+    [shows]="popularTvshows"
+    [showsType]="'tv'"
+  ></app-banner>
+</ng-container>
+
+<ng-container *ngIf="topRatedTvShows$ | async as topRatedTvShows">
+  <app-banner
+    [title]="'Top Rated TV Shows'"
+    [shows]="topRatedTvShows"
+    [showsType]="'tv'"
+  ></app-banner>
+</ng-container>

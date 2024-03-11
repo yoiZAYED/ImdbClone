@@ -1,0 +1,56 @@
+/* Styles for the header element */
+header {
+    /* Use flexbox layout */
+    display: flex;// this helps in allignment so we can bring the navigation( menu buttons) in parallel with the header.
+    /* Align items along the main axis (horizontally) */
+    justify-content: space-between;
+    /* Align items along the cross axis (vertically) */
+    align-items: center; // this is done to place everything in a single line that is their configuration is placed properly
+    /* Set height of the header */
+    height: 65px;
+    /* Set background color */
+    background-color: #000000;
+    /* Add a bottom border */
+    border-bottom: 1px solid #414141;
+  }
+  
+  /* Styles for the logo */
+  .logo {
+    /* Nested selector targeting elements with the class "logo" */
+    a {
+      /* Nested selector targeting anchor elements within elements with the class "logo" */
+      img {
+        /* Set width of images within the logo */
+        width: 122px;
+        display: block;
+      }
+    }
+  }
+  
+  /* Styles for the navigation */
+  .navigation {
+    /* Nested selector targeting elements with the class "navigation" */
+    ul {
+      /* Nested selector targeting unordered list elements within elements with the class "navigation" */
+      /* Reset default padding and margin for the list */
+      display: block;
+      padding: 0;
+      margin: 0;
+      list-style: none;
+      /* Styles for list items within the unordered list */
+      li {
+        /* Display list items inline */
+        display: inline; // this is done to ensure that our menu elements are placed one after another in line.
+        /* Add spacing between list items */
+        margin-right: 15px;
+        /* Styles for anchor elements within list items */
+        a {
+          /* Set text color for anchor elements */
+          color: white;
+          /* Remove underline decoration from anchor elements */
+          text-decoration: none;
+        }
+      }
+    }
+  }
+  

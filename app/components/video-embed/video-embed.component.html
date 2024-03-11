@@ -1,0 +1,14 @@
+<ng-container *ngIf="key">
+  <!-- this is used to check if there is a key value -->
+  <iframe
+    width="100%"
+    height="315"
+    [src]="videoUrl"
+    title="YouTube video player"
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    allowfullscreen
+  ></iframe>
+  <!--inlineFrame this tag is provided for embedding videos from youtube   The <iframe> tag is commonly used for embedding content such as maps, videos, social media widgets, advertisements, or other external webpages within a webpage. It p
+    provides a way to include dynamic content from different sources without affecting the layout or functionality of the main page. -->
+</ng-container>
